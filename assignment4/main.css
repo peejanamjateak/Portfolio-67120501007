@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    min-height: 100vh;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.85); /**/
+    backdrop-filter: blur(10px); /*[cite: 2]*/
+    -webkit-backdrop-filter: blur(10px); /*[cite: 2]*/
+    border-radius: 24px; /*[cite: 2]*/
+    padding: 30px; /*[cite: 2]*/
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /*[cite: 2]*/
+    border: 1px solid rgba(255, 255, 255, 0.5); /*[cite: 2]*/
+    line-height: 1.6;
+}
+
+#header {
+    text-align: center;
+    background: rgba(216, 67, 21, 0.85);
+    color: white;
+    border-color: rgba(216, 67, 21, 0.5);
+}
+
+#header h1 {
+    margin: 0;
+}
+
+a, .interactive-card, .step-img {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /*[cite: 2]*/
+}
+
+.interactive-card:hover {
+    transform: translateY(-4px); /*[cite: 2]*/
+    box-shadow: 0 8px 18px rgba(216, 67, 21, 0.12); /*[cite: 2]*/
+    border-color: #d84315; /*[cite: 2]*/
+}
+
+.flex-gallery {
+    display: flex; /*[cite: 2]*/
+    flex-wrap: wrap; /*[cite: 2]*/
+    gap: 15px; /*[cite: 2]*/
+    justify-content: center; /*[cite: 2]*/
+    margin-top: 15px;
+}
+
+.step-img {
+    width: calc(33.333% - 15px); /* แบ่งเป็น 3 รูปต่อแถว */
+    min-width: 120px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover; /* เทคนิคการ Crop รูปให้พอดีกรอบ */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.step-img:hover {
+    transform: scale(1.1) rotate(2deg); /*[cite: 2]*/
+    box-shadow: 0 8px 16px rgba(216, 67, 21, 0.3); /*[cite: 2]*/
+    z-index: 10;
+}
+
+#footer {
+    text-align: center;
+}
+#footer a {
+    color: #d84315;
+    text-decoration: none;
+    font-weight: bold;
+}
+#footer a:hover {
+    color: #ff9800; /*[cite: 2]*/
+}
+#footer a:active {
+    text-decoration: underline; /*[cite: 2]*/
+}
+
+#header, #main1, #main2, #right, #gallery, #footer {
+    grid-column: 1 / span 1;
+}
+
+@media only screen and (min-width: 600px) {
+    .grid-container {
+        grid-template-columns: 48% 48%;
+        justify-content: space-between;
+    }
+    #header { grid-column: 1 / span 2; }
+    #main1 { grid-column: 1 / span 1; }
+    #main2 { grid-column: 2 / span 1; }
+    #right { grid-column: 1 / span 2; }
+    #gallery { grid-column: 1 / span 2; }
+    #footer { grid-column: 1 / span 2; }
+}
+
+@media only screen and (min-width: 900px) {
+    .grid-container {
+        grid-template-columns: 25% 25% 46%;
+        gap: 2%;
+    }
+    #header { grid-column: 1 / span 3; }
+    #main1 { grid-column: 1 / span 1; }
+    #main2 { grid-column: 2 / span 1; }
+    #right { grid-column: 3 / span 1; grid-row: 2 / span 1; }
+    #gallery { grid-column: 1 / span 3; } /* ให้รูปภาพแผ่เต็มพื้นที่ด้านล่าง */
+    #footer { grid-column: 1 / span 3; }
+}

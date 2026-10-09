@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments & Projects - Sippanat Pensuk</title>
+    <!-- Google Fonts: Orbitron & Kanit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="wide-layout">
+
+    <div class="full-container">
+        
+        <!-- แถบด้านบน: ปุ่มย้อนกลับ -->
+        <div class="top-nav">
+            <a href="Index.html" class="btn back-btn">⬅ ย้อนกลับหน้าโปรไฟล์</a>
+        </div>
+
+        <!-- หน้าต่างพรีวิวรันผลงาน (รองรับทั้ง Web Iframe และ Video) -->
+        <div id="viewer-container" class="viewer-container hidden">
+            <div class="viewer-header">
+                <span id="current-project-title">PROJECT PREVIEW</span>
+                <button class="close-btn" onclick="closeViewer()">✕ ปิดหน้าต่างรันงาน</button>
+            </div>
+            
+            <!-- จอรันหน้าเว็บ HTML -->
+            <iframe id="project-frame" src="" title="Project Runner"></iframe>
+
+            <!-- จอรันคลิปวิดีโอ (ไม่มีแท็ก source ซ้อน ป้องกันปัญหา 0:00) -->
+            <video id="project-video" controls playsinline preload="auto" class="hidden">
+                เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+            </video>
+        </div>
+
+        <!-- ================= หมวดที่ 1: ASSIGNMENT (Grid หลายคอลัมน์) ================= -->
+        <section class="section-block">
+            <div class="header-section">
+                <h1 class="main-title">ASSIGNMENT</h1>
+                <p class="subtitle">คลังแฟ้มสะสมผลงานและการบ้าน Assignments ทั้งหมด</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Assignment 3 -->
+                <div class="project-card">
+                    <div class="card-badge">HTML / CSS</div>
+                    <h3>📁 Assignment 3</h3>
+                    <p class="card-desc">ฝึกการจัดโครงสร้างเนื้อหาและการตกแต่งสไตล์ด้วย CSS</p>
+                    <div class="action-row">
+                        <button class="btn run-btn" onclick="runProject('assignment-3/index.html', 'Assignment 3')">▶ รันตัวอย่าง</button>
+                        <a href="assignment-3/index.html" target="_blank" class="btn external-btn">เปิดเต็มจอ ↗</a>
+                    </div>
+                </div>
+
+                <!-- Assignment 4 -->
+                <div class="project-card">
+                    <div class="card-badge">Layout & Flexbox</div>
+                    <h3>📁 Assignment 4</h3>
+                    <p class="card-desc">การจัดวางองค์ประกอบหน้าเว็บและระบบการจัดรูปหน้า</p>
+                    <div class="action-row">
+                        <button class="btn run-btn" onclick="runProject('assignment4/index.html', 'Assignment 4')">▶ รันตัวอย่าง</button>
+                        <a href="assignment4/index.html" target="_blank" class="btn external-btn">เปิดเต็มจอ ↗</a>
+                    </div>
+                </div>
+
+                <!-- Assignment 5 -->
+                <div class="project-card">
+                    <div class="card-badge">Form & Interactive</div>
+                    <h3>📁 Assignment 5</h3>
+                    <p class="card-desc">การจัดการฟอร์ม และการรับค่าอินพุตเพื่อประมวลผล</p>
+                    <div class="action-row">
+                        <button class="btn run-btn" onclick="runProject('assignment5/index.html', 'Assignment 5')">▶ รันตัวอย่าง</button>
+                        <a href="assignment5/index.html" target="_blank" class="btn external-btn">เปิดเต็มจอ ↗</a>
+                    </div>
+                </div>
+
+                <!-- Assignment 6 -->
+                <div class="project-card">
+                    <div class="card-badge">JavaScript Logic</div>
+                    <h3>📁 Assignment 6</h3>
+                    <p class="card-desc">การเขียนสคริปต์ควบคุมการทำงานและการตอบสนองต่อผู้ใช้</p>
+                    <div class="action-row">
+                        <button class="btn run-btn" onclick="runProject('assignment-6/register.html', 'Assignment 6')">▶ รันตัวอย่าง</button>
+                        <a href="assignment-6/register.html" target="_blank" class="btn external-btn">เปิดเต็มจอ ↗</a>
+                    </div>
+                </div>
+
+                <!-- Assignment 7 -->
+                <div class="project-card">
+                    <div class="card-badge">DOM & Canvas</div>
+                    <h3>📁 Assignment 7</h3>
+                    <p class="card-desc">การจัดการ DOM หรือการวาดกราฟิกแบบโต้ตอบ</p>
+                    <div class="action-row">
+                        <button class="btn run-btn" onclick="runProject('assignment7/index.html', 'Assignment 7')">▶ รันตัวอย่าง</button>
+                        <a href="assignment7/index.html" target="_blank" class="btn external-btn">เปิดเต็มจอ ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- เส้นคั่นแบ่งโซน -->
+        <hr class="divider">
+
+        <!-- ================= หมวดที่ 2: PROJECT (1 แถวต่อ 1 โปรเจกต์) ================= -->
+        <section class="section-block">
+            <div class="header-section">
+                <h1 class="main-title">PROJECT</h1>
+                <p class="subtitle">โปรเจกต์และผลงานชิ้นหลักที่พัฒนา</p>
+            </div>
+
+            <div class="projects-rows">
+                <!-- Project 1: Smart Office -->
+                <div class="project-row-card">
+                    <div class="row-media">
+                        <img src="screenshot/SmartPic.png" alt="Smart Office Preview"
+                        <span> class="media-type-tag">🎬 Video Demo</span>
+                    </div>
+                    <div class="row-content">
+                        <div class="card-badge">IoT & Healthcare</div>
+                        <h3>💡 Smart Office</h3>
+                        <p class="card-desc">การออกแบบและทดลองควบคุมระบบเครื่องกรองอากาศและเซ็นเซอร์วัดสภาพแวดล้อมอัจฉริยะร่วมกับแนวคิดดูแลสุขภาพในพื้นที่ทำงาน</p>
+                        <div class="action-row">
+                            <button class="btn run-btn" onclick="runVideo('screenshot/smart-office.mp4', 'Smart Office Demonstration')">▶ รันคลิปวิดีโอ</button>
+                            <a href="screenshot/smart-office.mp4" target="_blank" class="btn external-btn">เปิดเต็มจอ ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: ICE RUNNER (Processing Game) -->
+                <div class="project-row-card">
+                    <div class="row-media">
+                        <img src="screenshot/GamePic.png" alt="ICE RUNNER Game Preview">
+                        <span class="media-type-tag">🎮 Processing & Hardware</span>
+                    </div>
+                    <div class="row-content">
+                        <div class="card-badge">Custom Controller Game</div>
+                        <h3>🐧 ICE RUNNER (Processing Game)</h3>
+                        <p class="card-desc">เกมที่พัฒนาด้วย Processing โดยมีจุดเด่นคือการเชื่อมต่อคอนโทรลเลอร์ที่ประดิษฐ์ขึ้นเอง ใช้เซ็นเซอร์วัดการเอียง (Gyro) เพื่อควบคุมทิศทางการเคลื่อนที่ของตัวละครเพนกวินหลบหลีกสิ่งกีดขวางบนธารน้ำแข็ง</p>
+                        <div class="action-row">
+                            <button class="btn run-btn" onclick="runVideo('screenshot/ice-runner.mp4', 'ICE RUNNER Game Demonstration')">▶ รันคลิปตัวอย่าง</button>
+                            <a href="screenshot/ice-runner.mp4" target="_blank" class="btn external-btn">เปิดเต็มจอ ↗</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

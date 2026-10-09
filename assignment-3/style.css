@@ -1,0 +1,125 @@
+/* กำหนดตัวแปรสีเพื่อง่ายต่อการจัดการ */
+:root {
+    --primary-color: #8b4513;      /* สีน้ำตาลเข้ม (SaddleBrown) */
+    --secondary-color: #d2691e;    /* สีน้ำตาลส้ม (Chocolate) */
+    --bg-color: #fdf5e6;           /* สีพื้นหลัง (OldLace) */
+    --card-bg: #ffffff;            /* สีพื้นหลังการ์ดสูตรอาหาร */
+    --text-main: #333333;          /* สีข้อความหลัก */
+    --text-muted: #666666;
+}
+
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.8;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+
+.recipe-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.recipe-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 20px auto; /* จัดให้อยู่กึ่งกลางและมีระยะห่างบน-ล่าง */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเบาๆ ให้รูปดูมีมิติ */
+}
+
+
+.recipe-header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.recipe-header h1 {
+    margin: 0;
+    font-size: 2em;
+    letter-spacing: 1px;
+}
+
+
+.recipe-body {
+    padding: 40px;
+}
+
+
+.section-title {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+
+.ingredient-list {
+    list-style-type: square;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    padding-left: 20px;
+}
+
+.ingredient-list li {
+    margin-bottom: 12px;
+}
+
+.ingredient-list strong {
+    color: var(--text-main);
+}
+
+
+.instruction-list {
+    padding-left: 20px;
+}
+
+.instruction-list li {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.instruction-list strong {
+    color: var(--primary-color);
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+
+.recipe-source {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed #ccc;
+    text-align: right;
+    font-size: 0.9em;
+    color: var(--text-muted);
+}
+
+.recipe-source a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.recipe-source a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 600px) {
+    .recipe-body {
+        padding: 20px;
+    }
+}
